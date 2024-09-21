@@ -19,7 +19,9 @@ public class Student extends User implements Comparable<Student>{
     public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
-
+/*
+Принцип: Encapsulation. Упростите код и сделайте его более читабельным.
+* */
     @Override
     public String toString() {
         return "Student{" +
@@ -30,7 +32,9 @@ public class Student extends User implements Comparable<Student>{
                 ", dateOfBirth=" + super.getDateOfBirth() +
                 '}';
     }
-
+/*
+Принцип: Fail Fast. Предотвращение возможных исключений.
+* */
     @Override
     public int compareTo(Student o) {
         return this.studentId.compareTo(o.studentId);

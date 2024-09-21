@@ -1,18 +1,26 @@
 import java.time.LocalDate;
 
 public class User {
+
+    /*
+    Модель пользователя с основнысм атриьутами.
+    * */
     private String firstName;
     private String secondName;
     private String patronymic;
     private LocalDate dateOfBirth;
-
+/*
+Инициализация полей класса.
+* */
     public User(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.patronymic = patronymic;
         this.dateOfBirth = dateOfBirth;
     }
-
+/*
+Геттре для имение.
+* */
     public String getFirstName() {
         return firstName;
     }
@@ -44,7 +52,9 @@ public class User {
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
+/*
+Предоставление объекта.
+* */
     @Override
     public String toString() {
         return "User{" +

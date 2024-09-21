@@ -4,16 +4,25 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroupService {
+    /*
+    Хранение информации о группе студентов.
+    * */
     private StudentGroup studentGroup;
-
+/*
+Создание новой группы студентов, используя переданного учителя и списка студентов.
+* */
     public void createStudentGroup(Teacher teacher, List<Student> students) {
         this.studentGroup = new StudentGroup(teacher, students);
     }
-
+/*
+Возращение текущей группы студентов.
+* */
     public StudentGroup getStudentGroup() {
         return studentGroup;
     }
-
+/*
+Поиск студента по имени и фамилии и созднаие списка для хранения.
+* */
     public Student getStudentFromStudentGroup(String firstName, String secondName){
         Iterator<Student> iterator = studentGroup.iterator();
         List<Student> result = new ArrayList<>();
@@ -24,6 +33,9 @@ public class StudentGroupService {
                 result.add(student);
             }
         }
+        /*
+        Выброс исклучения.
+        * */
         if(result.size() == 0){
             throw new IllegalStateException(
                     String.format("Студент с именем %s и фамилией %s не найден", firstName, secondName)
@@ -34,13 +46,17 @@ public class StudentGroupService {
         }
         return result.get(0);
     }
-
+/*
+Возращение отсортированного списка студентов.
+* */
     public List<Student> getSortedStudentGroup(){
         List<Student> students = new ArrayList<>(studentGroup.getStudents());
         Collections.sort(students);
         return students;
     }
-
+/*
+Сортировка через компаратор.
+* */
     public List<Student> getSortedByFIOStudentGroup(){
         List<Student> students = new ArrayList<>(studentGroup.getStudents());
         students.sort(new UserComparator<Student>());

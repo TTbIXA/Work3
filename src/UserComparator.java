@@ -1,7 +1,9 @@
 import java.util.Comparator;
 
 public class UserComparator<T extends User> implements Comparator<T> {
-
+/*
+Сравнение двух объектов.
+* */
     @Override
     public int compare(T o1, T o2) {
         int resultOfComparing = o1.getSecondName().compareTo(o2.getSecondName());
